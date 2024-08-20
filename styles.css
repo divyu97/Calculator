@@ -3,5 +3,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: grey;
     height: 90vh;
+}
+
+.calculator-container {
+    background-color: white;
+    height: 500px;
+    width: 500px;
+}
+
+button {
+    border-radius: 50%;
 }
