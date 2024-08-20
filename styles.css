@@ -23,6 +23,7 @@ button {
     height: 80px;
     font-size: 20px;
     border-style: none;
+    font-weight: bolder;
 }
 
 .input {
@@ -32,6 +33,7 @@ button {
     text-align: right;
     font-size: 20px;
     width: 454px;
+    font-weight: bold;
 }
 
 .button-clearall, .button-clear {
