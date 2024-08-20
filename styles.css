@@ -13,7 +13,7 @@ body {
 .calculator-container {
     background-color: white;
     height: 515px;
-    width: 400px;
+    width: 360px;
     border-radius: 10px;
 }
 
@@ -51,7 +51,7 @@ button {
 }
 
 .button-zero {
-    flex-grow: 1;
+    width: 168px;
     border-radius: 50px;
 }
 
@@ -72,7 +72,8 @@ button {
 
 .buttons-container {
     display: flex;
-    justify-content: space-between;
+    row-gap: 8px;
+    column-gap: 8px;
     gap: 8px;
     padding: 8px;
     flex-wrap: wrap;
