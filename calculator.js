@@ -9,3 +9,6 @@ for (const button of numberButtons) {
         input.value += button.innerHTML;
     });
 }
+document.querySelector(".button-clear").addEventListener("click", () => {
+    input.value = input.value.toString().slice(0, input.value.length - 1);
+});
