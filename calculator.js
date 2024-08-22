@@ -15,3 +15,9 @@ document.querySelector(".button-clear").addEventListener("click", () => {
 document.querySelector(".button-clearall").addEventListener("click", () => {
     input.value = "";
 });
+
+document.querySelector(".button-decimal").addEventListener("click", () => {
+    if (!(input.value.includes("."))) {
+        input.value += ".";
+    }
+});
