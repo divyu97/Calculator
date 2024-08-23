@@ -65,13 +65,15 @@ function operation(op, x, y) {
 
 operators.forEach((operator) => {
     operator.addEventListener("click", () => {
-        if (!(isNaN(input.value))) {
+        if (!(isNaN(input.value)) && (input.value !== "" || inputexp.value !== "")) {
             if (!(inputexp.value.includes("+")) && !(inputexp.value.includes("−")) && !(inputexp.value.includes("×")) && !(inputexp.value.includes("÷"))) {
                 inputexp.value = input.value + " " + operator.innerHTML;
                 input.value = "";
             } else if (operator.innerHTML === inputexp.value.slice(-1)) {
-                inputexp.value = operation(operator.innerHTML, input.value, inputexp.value.slice(0, inputexp.length - 3)) + " " + operator.innerHTML;
-                input.value = "";
+                if (input.value !== "") {
+                    inputexp.value = operation(operator.innerHTML, inputexp.value.slice(0, inputexp.value.length - 2), input.value) + " " + operator.innerHTML;
+                    input.value = "";
+                }  
             }
         } 
     });
