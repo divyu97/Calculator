@@ -61,3 +61,15 @@ function operation(op, x, y) {
         return number1 / number2;
     }
 }
+
+operators.forEach((operator) => {
+    operator.addEventListener("click", () => {
+        if (!(isNaN(input.value))) {
+            if (!(inputexp.value.includes("+")) && !(inputexp.value.includes("−")) && !(inputexp.value.includes("×")) && !(inputexp.value.includes("÷"))) {
+                inputexp.value = input.value + " " + operator.innerHTML;
+            } else if (operator.innerHTML === inputexp.value.slice(-1)) {
+                inputexp.value = operation(oper, string1, string2) + " " + operator.innerHTML;
+            }
+        } 
+    });
+});
