@@ -28,8 +28,8 @@ document.querySelector(".button-decimal").addEventListener("click", () => {
 document.querySelector(".button-sign").addEventListener("click", () => {
     if (input.value !== "0") {
         if (!(isNaN(parseInt(input.value[0]))) || (input.value[0] === "." && !(isNaN(parseInt(input.value[1]))))) {
-            input.value = "−" + input.value;
-        } else if (input.value[0] === "−") {
+            input.value = "-" + input.value;
+        } else if (input.value[0] === "-") {
             input.value = input.value.slice(1);
         }
     }
