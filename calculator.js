@@ -2,6 +2,7 @@ const numberButtons = document.querySelectorAll(".button-number");
 const input = document.querySelector(".input");
 const zeroButton = document.querySelector(".button-zero");
 const inputexp = documnent.querySelector(".inputexp");
+const operators = document.querySelectorAll(".button-operator");
 zeroButton.addEventListener("click", () => {
     input.value += zeroButton.innerHTML;
 });
