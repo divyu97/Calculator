@@ -16,6 +16,7 @@ document.querySelector(".button-clear").addEventListener("click", () => {
 });
 document.querySelector(".button-clearall").addEventListener("click", () => {
     input.value = "";
+    inputexp.value = "";
 });
 
 document.querySelector(".button-decimal").addEventListener("click", () => {
