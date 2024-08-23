@@ -32,3 +32,32 @@ document.querySelector(".button-sign").addEventListener("click", () => {
         }
     }
 });
+
+function operation(op, x, y) {
+    var number1;
+    var number2;
+    for (let i = 1; i < 3; i++) {
+        if (arguments[i].includes(".")) {
+            if (i === 1) {
+                number1 = parseFloat(arguments[i]);
+            } else {
+                number2 = parseFloat(arguments[i]);
+            }
+        } else {
+            if (i === 1) {
+                number1 = parseInt(arguments[i]);
+            } else {
+                number2 = parseInt(arguments[i]);
+            }
+        }
+    }
+    if (op === "+") {
+        return number1 + number2;
+    } else if (op === "−") {
+        return number1 - number2;
+    } else if (op === "×") {
+        return number1 * number2;
+    } else {
+        return number1 / number2;
+    }
+}
