@@ -68,8 +68,10 @@ operators.forEach((operator) => {
         if (!(isNaN(input.value))) {
             if (!(inputexp.value.includes("+")) && !(inputexp.value.includes("−")) && !(inputexp.value.includes("×")) && !(inputexp.value.includes("÷"))) {
                 inputexp.value = input.value + " " + operator.innerHTML;
+                input.value = "";
             } else if (operator.innerHTML === inputexp.value.slice(-1)) {
-                inputexp.value = operation(oper, string1, string2) + " " + operator.innerHTML;
+                inputexp.value = operation(operator.innerHTML, input.value, inputexp.value.slice(0, inputexp.length - 3)) + " " + operator.innerHTML;
+                input.value = "";
             }
         } 
     });
