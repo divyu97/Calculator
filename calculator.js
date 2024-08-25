@@ -12,7 +12,19 @@ for (const button of numberButtons) {
     });
 }
 document.querySelector(".button-clear").addEventListener("click", () => {
-    input.value = input.value.toString().slice(0, input.value.length - 1);
+    if (inputexp.value.includes("=")) {
+        let newValue = "";
+        let tmpValue = inputexp.value.slice(0, inputexp.value.length - 3);
+        let i = tmpValue.length - 1;
+        while (tmpValue[i] !== " ") {
+            newValue += tmpValue[i];
+            i--;
+        }
+        input.value = newValue;
+        inputexp.value = inputexp.value.slice(0, inputexp.value.length - 4 - newValue.length);
+    } else {
+        input.value = input.value.toString().slice(0, input.value.length - 1);
+    }
 });
 document.querySelector(".button-clearall").addEventListener("click", () => {
     input.value = "";
