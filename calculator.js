@@ -79,3 +79,13 @@ operators.forEach((operator) => {
         } 
     });
 });
+
+document.querySelector(".button-equal").addEventListener("click", () => {
+    let inp = input.value;
+    if (!(isNaN(inp)) && inp !== "" && !(inputexp.value.includes("="))) {
+        if (inputexp.value.includes("+") || inputexp.value.includes("−") || inputexp.value.includes("×") || inputexp.value.includes("÷")) {
+            input.value = operation(inputexp.value.slice(-1), inputexp.value.slice(0, inputexp.value.length - 2), inp);
+            inputexp.value += " " + inp + " =";
+        }
+    }
+});
