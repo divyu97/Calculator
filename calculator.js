@@ -20,7 +20,7 @@ document.querySelector(".button-clear").addEventListener("click", () => {
             newValue += tmpValue[i];
             i--;
         }
-        input.value = newValue;
+        input.value = newValue.split("").reverse().join("");
         inputexp.value = inputexp.value.slice(0, inputexp.value.length - 4 - newValue.length);
     } else {
         input.value = input.value.toString().slice(0, input.value.length - 1);
