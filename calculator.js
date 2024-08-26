@@ -84,8 +84,13 @@ operators.forEach((operator) => {
                 input.value = "";
             } else if (operator.innerHTML === inputexp.value.slice(-1)) {
                 if (input.value !== "") {
-                    inputexp.value = operation(operator.innerHTML, inputexp.value.slice(0, inputexp.value.length - 2), input.value) + " " + operator.innerHTML;
-                    input.value = "";
+                    let oper = operator.innerHTML;
+                    if (oper === "÷" && input.value === "0"){
+                        alert("Can't divide by zero");
+                    } else {
+                        inputexp.value = operation(oper, inputexp.value.slice(0, inputexp.value.length - 2), input.value)  + " " + oper;
+                        input.value = "";
+                    }
                 }  
             } else if (inputexp.value.includes("=")) {
                 inputexp.value = input.value + " " + operator.innerHTML;
@@ -99,8 +104,13 @@ document.querySelector(".button-equal").addEventListener("click", () => {
     let inp = input.value;
     if (!(isNaN(inp)) && inp !== "" && !(inputexp.value.includes("="))) {
         if (inputexp.value.includes("+") || inputexp.value.includes("−") || inputexp.value.includes("×") || inputexp.value.includes("÷")) {
-            input.value = operation(inputexp.value.slice(-1), inputexp.value.slice(0, inputexp.value.length - 2), inp);
-            inputexp.value += " " + inp + " =";
+            let oper = inputexp.value.slice(-1);
+            if (oper === "÷" && inp === "0"){
+                alert("Can't divide by zero");
+            } else {
+                input.value = operation(oper, inputexp.value.slice(0, inputexp.value.length - 2), inp);
+                inputexp.value += " " + inp + " =";
+            }
         }
     }
 });
