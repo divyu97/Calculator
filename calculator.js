@@ -87,6 +87,9 @@ operators.forEach((operator) => {
                     inputexp.value = operation(operator.innerHTML, inputexp.value.slice(0, inputexp.value.length - 2), input.value) + " " + operator.innerHTML;
                     input.value = "";
                 }  
+            } else if (inputexp.value.includes("=")) {
+                inputexp.value = input.value + " " + operator.innerHTML;
+                input.value = "";
             }
         } 
     });
