@@ -112,5 +112,7 @@ document.querySelector(".button-equal").addEventListener("click", () => {
                 inputexp.value += " " + inp + " =";
             }
         }
+    } else if (inputexp.value.includes("=")) {
+        inputexp.value = "";
     }
 });
