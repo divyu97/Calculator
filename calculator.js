@@ -66,13 +66,13 @@ function operation(op, x, y) {
         }
     }
     if (op === "+") {
-        return number1 + number2;
+        return Math.round((number1 + number2) * (10 ** 10)) / (10 ** 10);
     } else if (op === "−") {
-        return number1 - number2;
+        return Math.round((number1 - number2) * (10 ** 10)) / (10 ** 10);
     } else if (op === "×") {
-        return number1 * number2;
+        return Math.round((number1 * number2) * (10 ** 10)) / (10 ** 10);
     } else {
-        return number1 / number2;
+        return Math.round((number1 / number2) * (10 ** 10)) / (10 ** 10);
     }
 }
 
